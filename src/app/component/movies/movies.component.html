@@ -1,1 +1,5 @@
-<p>movies works!</p>
+<p>movies works! id of current movie: {{id}}</p>
+<h1># of movies: {{movies.length}}</h1>
+<div *ngFor="let movie of movies">
+    ID: {{movie.id}}
+</div>
