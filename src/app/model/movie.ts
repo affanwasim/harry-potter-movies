@@ -8,5 +8,5 @@ export interface Movie {
     cinematographers: string[],
     poster: string,
     producers: string[],
-    summary: string,  
+    summary: string,
 }

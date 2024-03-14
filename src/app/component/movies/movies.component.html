@@ -1,7 +1,22 @@
-<p>movies works! id of current movie: {{id()}}</p>
-<h1># of movies: {{movies.length}}</h1>
+<h1>Harry Potter Movies</h1>
+<mat-toolbar style="background-color: white;">
+    <span class="tab"></span>
+    <mat-form-field class="example-13-width" color="primary">
+        <mat-label>
+          Title:
+        </mat-label>
+        <input matInput type="text" [formControl]="filter" placeholder="Filter movies by title...">
+    </mat-form-field>
+    <span class="tab"></span>
+    <mat-form-field class="example-13-width" color="primary">
+        <mat-label>
+          Release Year:
+        </mat-label>
+        <input matInput type="number" [formControl]="year" placeholder="Filter movies by release year...">
+    </mat-form-field>
+</mat-toolbar>
 <ul>
-    <li *ngFor="let movie of movies">
+    <li *ngFor="let movie of finalMovies$ | async">
         <mat-toolbar>
                 <h1>
                     {{movie.title}}
@@ -17,7 +32,7 @@
             <span class="tab"></span>
             Budget: ${{movie.budget}} million
             <span class="tab"></span>
-            Duration: {{movie.duration}} ${movie.duration} hours
+            Duration: {{(movie.duration - movie.duration%60)/60}}h {{movie.duration%60}}m
         </h3>
     
     </li>
