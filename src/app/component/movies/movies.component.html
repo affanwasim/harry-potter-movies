@@ -1,5 +1,24 @@
-<p>movies works! id of current movie: {{id}}</p>
+<p>movies works! id of current movie: {{id()}}</p>
 <h1># of movies: {{movies.length}}</h1>
-<div *ngFor="let movie of movies">
-    ID: {{movie.id}}
-</div>
+<ul>
+    <li *ngFor="let movie of movies">
+        <mat-toolbar>
+                <h1>
+                    {{movie.title}}
+                </h1>
+                <span class="example-spacer"></span>
+                <button mat-raised-button
+                matTooltip="View Details about this movie." color="accent">Details
+                <!-- <mat-icon fontIcon="account_circle" aria-hidden="false" aria-label="profile"></mat-icon> -->
+                </button>
+        </mat-toolbar>
+        <h3>
+            Release date: {{movie.release_date}}
+            <span class="tab"></span>
+            Budget: ${{movie.budget}} million
+            <span class="tab"></span>
+            Duration: {{movie.duration}} ${movie.duration} hours
+        </h3>
+    
+    </li>
+</ul>
