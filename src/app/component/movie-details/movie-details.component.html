@@ -1,0 +1,79 @@
+<table  class="example-full-width" *ngIf="movie$ | async as movie" style="align-items: center;">
+    <thead>
+        <td>
+            <button mat-raised-button matTooltip="Back to List of Movies" color="primary"
+                (click)="backToMovies()" style="height:40px;width:90px;">
+                <mat-icon fontIcon="arrow_back" aria-hidden="false" aria-label="back"></mat-icon>Back
+            </button>
+        </td>
+        <td>
+           
+        </td>
+        <td>
+
+        </td>
+    </thead>
+    <tbody>
+        <tr>
+            <td colspan="3">
+               
+            </td>
+            <table class="example-23-width">
+                <thead>
+                    <td colspan="3">
+                        <h1>{{movie.title}}</h1>
+                    </td>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="2">
+                            <img src={{movie.poster}} alt="Movie Poster" aria-label="Movie Poster" width="325" height="424">
+                        </td>
+                        <td>
+                            <p style="text-align: left;">
+                                <strong>Summary:</strong> {{movie.summary}}
+                            </p>
+                        </td>
+                    </tr>
+                    <tr style="background-color: azure;">
+                        <td colspan="2">Box office</td>
+                        <td>
+                            ${{movie.box_office}} million
+                        </td>
+                    </tr>
+                    <tr style="background-color: azure;">
+                        <td colspan="2">Budget</td>
+                        <td>
+                            ${{movie.budget}} million
+                        </td>
+                    </tr>
+                    <tr style="background-color: azure;">
+                        <td colspan="2">Duration</td>
+                        <td>
+                            {{(movie.duration - movie.duration%60)/60}}h {{movie.duration%60}}m
+                        </td>
+                    </tr>
+                    <tr style="background-color: azure;">
+                        <td colspan="2">Producers</td>
+                        <td>
+                            <ng-container *ngFor="let producer of movie.producers;last as isLast;">
+                                {{producer}}<ng-container *ngIf="!isLast">,</ng-container> 
+                            </ng-container>
+                        </td>
+                    </tr>
+                    <tr style="background-color: azure;">
+                        <td colspan="2">Cinematographers</td>
+                        <td>
+                            <ng-container *ngFor="let cinematographer of movie.cinematographers;last as isLast;">
+                                {{cinematographer}}<ng-container *ngIf="!isLast">,</ng-container> 
+                            </ng-container>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <td>
+              
+            </td>
+        </tr>
+    </tbody>    
+</table>

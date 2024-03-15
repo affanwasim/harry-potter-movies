@@ -10,10 +10,8 @@ export class MoviesService {
   moviesURL:string = 'http://localhost:4200/movies'
   constructor(private http:HttpClient) { }
 
-  getMovie(url:string) {
-    this.http.get(url).subscribe((res) => {
-      console.log(res);
-    })
+  getMovie(id:string):Observable<Movie> {
+    return this.http.get<Movie>(this.moviesURL+'/'+id);
   }
 
   getMovies(): Observable<Movie[]> {

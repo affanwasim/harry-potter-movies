@@ -1,4 +1,4 @@
-import { AfterContentInit, Component, OnInit, WritableSignal, signal } from '@angular/core';
+import { Component, WritableSignal, signal } from '@angular/core';
 import { handleRequest } from 'msw';
 import { routes } from '../../app.routes';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -22,7 +22,6 @@ import { MatIcon, MatIconModule } from '@angular/material/icon';
   styleUrl: './movies.component.css'
 })
 export class MoviesComponent {
-  id:WritableSignal<string>=signal('');
   movies$: Observable<Movie[]>;
   filteredMovies$: Observable<Movie[]>;
   finalMovies$: Observable<Movie[]>;
@@ -43,11 +42,16 @@ export class MoviesComponent {
     this.finalMovies$ = combineLatest(this.filteredMovies$, this.year$).pipe(
       map(([movies, yearFilter]) => movies.filter(movie => {
         let releaseYear:number = Number.parseInt(movie.release_date.substring(0,movie.release_date.indexOf('-')));
-        console.log('Release Year:' + releaseYear);
-        console.log('Year Filter: '+ yearFilter);
+        //console.log('Release Year:' + releaseYear);
+        //console.log('Year Filter: '+ yearFilter);
         return (yearFilter == undefined || (releaseYear==yearFilter));
       }))
     );
+  }
+
+  viewDetails(id:string):void {
+    console.log('ID of movie for which Details button was clicked: ' + id);
+    this.router.navigate([this.router.url+'/'+id]);
   }
 
 }
