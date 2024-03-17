@@ -207,7 +207,7 @@ mat-toolbar {
 }
 
 .example-13-width {
-    width: 33%;
+    width: 50%;
     vertical-align: middle;
     min-height: fit-content;
     /* border-radius: 10px; */
