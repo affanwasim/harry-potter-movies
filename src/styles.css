@@ -192,7 +192,7 @@ mat-toolbar {
     vertical-align: middle;
     min-height: fit-content;
     background-color:rgba(176, 204, 189, 0.962);
-    padding: 20px 20px 30px 30px;
+    padding: 25px;
     /* opacity: 1; */
     /* border-radius: 10px; */
 }
@@ -203,7 +203,7 @@ mat-toolbar {
     min-height: fit-content;
     background-color:rgba(176, 204, 189, 0.962);
     /* border-radius: 10px; */
-    padding: 20px 20px 30px 30px;
+    padding: 25px;
 }
 
 .example-13-width {
@@ -211,7 +211,7 @@ mat-toolbar {
     vertical-align: middle;
     min-height: fit-content;
     /* border-radius: 10px; */
-    padding: 20px 20px 30px 30px;
+    padding: 25px;
 }
 
 .example-14-width {
@@ -219,7 +219,7 @@ mat-toolbar {
   vertical-align: middle;
   min-height: fit-content;
   /* border-radius: 10px; */
-  padding: 30px 30px 20px 20px;
+  padding: 25px;
 }
 
 .example-45-width {
@@ -228,7 +228,7 @@ mat-toolbar {
   min-height: fit-content;
   background-color:rgba(176, 204, 189, 0.962);
   /* border-radius: 10px; */
-  padding: 100px;
+  padding: 50px;
   width: fit-content;
 }
 

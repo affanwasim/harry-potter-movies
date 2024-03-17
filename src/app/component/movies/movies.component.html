@@ -7,7 +7,7 @@
             <td class="example-16-width" style="vertical-align: top;">
 
             </td>
-            <td class="example-23-width" style="vertical-align: top;" colspan="1">
+            <td class="example-23-width" style="vertical-align: middle;" colspan="1">
                 <h1>Harry Potter Movies</h1>
                 <mat-toolbar style="text-align:center;background-color: inherit;height: fit-content;">
                     <div class="example-full-width" style="background-color:rgb(192, 213, 210);">
@@ -26,7 +26,7 @@
                                     Release Year:
                                 </mat-label>
                                 <input matInput type="number" [formControl]="year"
-                                    placeholder="Filter movies by release year..." style="width: fit-content;">
+                                    placeholder="Filter movies by release year...">
                             </mat-form-field>
                         </mat-toolbar>
                     </div>
@@ -41,10 +41,8 @@
                                 {{movie.title}}
                             </h1>
                             <span class="example-spacer"></span>
-                            <button id={{movie.id}} mat-raised-button matTooltip="View Details about this movie."
-                                color="primary" (click)="viewDetails(movie.id)"
-                                style="height:auto;width:fit-content;">Details
-                                <mat-icon fontIcon="movie" aria-hidden="false" aria-label="details"></mat-icon>
+                            <button mat-stroked-button id={{movie.id}} (click)="viewDetails(movie.id)"
+                                style="border:1px solid;color:black;background-color:rgb(172, 200, 211);height:auto;width:fit-content;">Details
                             </button>
                         </mat-toolbar>
                         <h3>
