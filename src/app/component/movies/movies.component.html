@@ -7,20 +7,18 @@
             <td class="example-16-width" style="vertical-align: top;">
 
             </td>
-            <td class="example-23-width" style="vertical-align: top;">
+            <td class="example-23-width" style="vertical-align: top;" colspan="1">
                 <h1>Harry Potter Movies</h1>
                 <mat-toolbar style="text-align:center;background-color: inherit;height: fit-content;">
-                    <span class="example-spacer"></span>
-                    <div class="example-23-width" style="background-color:rgb(192, 213, 210);">
+                    <div class="example-full-width" style="background-color:rgb(192, 213, 210);">
                         <h1 style="background-color: inherit;">Filters:</h1>
-                        <mat-toolbar style="background-color:inherit;height: fit-content;">
-                            <span class="example-spacer"></span>
+                        <mat-toolbar style="background-color:inherit;height: fit-content;"> 
                             <mat-form-field class="example-13-width" color="primary">
                                 <mat-label>
                                     Title:
                                 </mat-label>
                                 <input matInput type="text" [formControl]="filter"
-                                    placeholder="Filter movies by title...">
+                                    placeholder="Filter movies by title..." style="width: fit-content;">
                             </mat-form-field>
                             <span class="example-spacer"></span>
                             <mat-form-field class="example-13-width" color="primary">
@@ -28,17 +26,16 @@
                                     Release Year:
                                 </mat-label>
                                 <input matInput type="number" [formControl]="year"
-                                    placeholder="Filter movies by release year...">
+                                    placeholder="Filter movies by release year..." style="width: fit-content;">
                             </mat-form-field>
-                            <span class="example-spacer"></span>
                         </mat-toolbar>
                     </div>
-                    <span class="example-spacer"></span>
+                    
                 </mat-toolbar>
 
-                <ul>
-                    <li class="example-full-width" *ngFor="let movie of finalMovies$ | async"
-                        style="background-color:rgb(192, 213, 210);">
+                <ul class="example-45-width">
+                    <li *ngFor="let movie of finalMovies$ | async"
+                        style="background-color:rgb(192, 213, 210);vertical-align: top;">
                         <mat-toolbar style="background-color:inherit;">
                             <h1>
                                 {{movie.title}}
@@ -46,7 +43,7 @@
                             <span class="example-spacer"></span>
                             <button id={{movie.id}} mat-raised-button matTooltip="View Details about this movie."
                                 color="primary" (click)="viewDetails(movie.id)"
-                                style="height:50px;width:fit-content;">Details
+                                style="height:auto;width:fit-content;">Details
                                 <mat-icon fontIcon="movie" aria-hidden="false" aria-label="details"></mat-icon>
                             </button>
                         </mat-toolbar>
