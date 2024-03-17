@@ -8,11 +8,11 @@ body {
 
 body {
     margin: 0;
-    /* font-family: Roboto, "Helvetica Neue", sans-serif; */
+    font-family: Roboto, "Helvetica Neue", sans-serif;
   /* background-image: url('../src/assets/logo.png');
   background-size: 25%; */
   /* background-position: center; */
-  background-color: gainsboro;
+  background-color:rgba(176, 204, 189, 0.962);;
   text-align: center;
   vertical-align: middle;
   width: auto;
@@ -71,7 +71,7 @@ height:50px;
   font-family: 'Material Icons';
   font-weight: normal;
   font-style: normal;
-  font-size: 24px;
+  font-size: 20px;
   line-height:1;
   letter-spacing: normal;
   text-transform:none;
@@ -94,7 +94,7 @@ h1, h2 {
   padding: 16px 12px;
   font-weight: normal;
   font-style: normal;
-  font-size: 24px;
+  /* font-size: 20px; */
   letter-spacing: normal;
   text-transform: none;
   white-space: nowrap;
@@ -120,7 +120,7 @@ h5 {
   padding: 16px 12px;
   font-weight: normal;
   font-style: normal;
-  font-size: 24px;
+  /* font-size: 20px; */
   letter-spacing: normal;
   text-transform: none;
   white-space: nowrap;
@@ -182,7 +182,7 @@ mat-toolbar {
     width: 100%;
     vertical-align: middle;
     min-height: fit-content;
-    background-color:silver;
+    background-color:rgb(192, 213, 210);
     opacity: 1;
     /* border-radius: 10px; */
 }
@@ -191,7 +191,7 @@ mat-toolbar {
     width: 100%;
     vertical-align: middle;
     min-height: fit-content;
-    background-color:silver;
+    background-color:rgba(176, 204, 189, 0.962);
     /* opacity: 1; */
     /* border-radius: 10px; */
 }
@@ -200,7 +200,7 @@ mat-toolbar {
     width: 67%;
     vertical-align: middle;
     min-height: fit-content;
-    background-color:silver;
+    background-color:rgba(176, 204, 189, 0.962);
     /* border-radius: 10px; */
 }
 
@@ -210,6 +210,22 @@ mat-toolbar {
     min-height: fit-content;
     /* border-radius: 10px; */
     padding: 30px 30px 20px 20px;
+}
+
+.example-14-width {
+  width: 25%;
+  vertical-align: middle;
+  min-height: fit-content;
+  /* border-radius: 10px; */
+  padding: 30px 30px 20px 20px;
+}
+
+.example-16-width {
+  width: 17%;
+  vertical-align: middle;
+  min-height: fit-content;
+  /* border-radius: 10px; */
+  padding: 30px 30px 20px 20px;
 }
 
 .example-half-width {
@@ -281,8 +297,9 @@ tr {
     text-align: center;
     align-content: center;
     width: fit-content;
-    padding: 5px;
-    font-size: small;
+    height: fit-content;
+    padding: 15px 10px;
+    font-size: medium;
 }
 
 mat-accordion {
@@ -305,3 +322,4 @@ mat-divider {
     vertical-align: middle;
     min-height: fit-content;
 }
+

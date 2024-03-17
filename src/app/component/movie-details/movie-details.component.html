@@ -1,79 +1,105 @@
-<table  class="example-full-width" *ngIf="movie$ | async as movie" style="align-items: center;">
+<table class="example-full-width" *ngIf="movie$ | async as movie">
     <thead>
-        <td>
-            <button mat-raised-button matTooltip="Back to List of Movies" color="primary"
-                (click)="backToMovies()" style="height:40px;width:90px;">
-                <mat-icon fontIcon="arrow_back" aria-hidden="false" aria-label="back"></mat-icon>Back
-            </button>
-        </td>
-        <td>
-           
-        </td>
-        <td>
 
-        </td>
     </thead>
     <tbody>
         <tr>
-            <td colspan="3">
-               
+            <td class="example-16-width" style="vertical-align: top;">
+
             </td>
-            <table class="example-23-width">
-                <thead>
-                    <td colspan="3">
-                        <h1>{{movie.title}}</h1>
-                    </td>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td colspan="2">
-                            <img src={{movie.poster}} alt="Movie Poster" aria-label="Movie Poster" width="325" height="424">
-                        </td>
-                        <td>
-                            <p style="text-align: left;">
-                                <strong>Summary:</strong> {{movie.summary}}
-                            </p>
-                        </td>
-                    </tr>
-                    <tr style="background-color: azure;">
-                        <td colspan="2">Box office</td>
-                        <td>
-                            ${{movie.box_office}} million
-                        </td>
-                    </tr>
-                    <tr style="background-color: azure;">
-                        <td colspan="2">Budget</td>
-                        <td>
-                            ${{movie.budget}} million
-                        </td>
-                    </tr>
-                    <tr style="background-color: azure;">
-                        <td colspan="2">Duration</td>
-                        <td>
-                            {{(movie.duration - movie.duration%60)/60}}h {{movie.duration%60}}m
-                        </td>
-                    </tr>
-                    <tr style="background-color: azure;">
-                        <td colspan="2">Producers</td>
-                        <td>
-                            <ng-container *ngFor="let producer of movie.producers;last as isLast;">
-                                {{producer}}<ng-container *ngIf="!isLast">,</ng-container> 
-                            </ng-container>
-                        </td>
-                    </tr>
-                    <tr style="background-color: azure;">
-                        <td colspan="2">Cinematographers</td>
-                        <td>
-                            <ng-container *ngFor="let cinematographer of movie.cinematographers;last as isLast;">
-                                {{cinematographer}}<ng-container *ngIf="!isLast">,</ng-container> 
-                            </ng-container>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <td>
-              
+            <td class="example-23-width">
+                <table>
+                    <thead>
+                        <tr>
+                            <td colspan="3" style="text-align: left;">
+                                <button mat-raised-button matTooltip="Back to List of Movies" color="primary"
+                                    (click)="backToMovies()" style="height:fit-content;width:fit-content;vertical-align:middle;padding: 10px;">
+                                    <span class="material-symbols-outlined">home</span> Back
+                                </button>
+                            </td>
+                            <td>
+
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <table class="example-full-width">
+                                    <thead>
+                                        <td colspan="3">
+                                            <h1>{{movie.title}}</h1>
+                                        </td>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="1">
+                                                <img style="vertical-align: top;" src={{movie.poster}}
+                                                    alt="Movie Poster" aria-label="Movie Poster" width="115%"
+                                                    height="115%">
+                                            </td>
+                                            <td style="text-align: left;vertical-align: top;line-height: 25px;padding-left: 30px;" colspan="3">
+                                                <br>
+                                                <strong>Summary:</strong> {{movie.summary}}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="3">
+                                                <h1>Details</h1>
+                                            </td>
+                                        </tr>
+
+                                        <tr style="background-color: rgb(192, 213, 210);">
+                                            <td colspan="1" style="text-align: right;border-right: solid 2px;"><strong>Box office</strong></td>
+                                            <td style="text-align: left;" colspan="2">
+                                                ${{movie.box_office}} <ng-container
+                                                    *ngIf="(movie.box_office)<10 else million">billion</ng-container><ng-template
+                                                    #million>million</ng-template>
+                                            </td>
+                                        </tr>
+                                        <tr style="background-color: rgb(192, 213, 210);">
+                                            <td colspan="1" style="text-align: right;border-right: solid 2px;"><strong>Budget</strong></td>
+                                            <td style="text-align: left;" colspan="2">
+                                                ${{movie.budget}} million
+                                            </td>
+                                        </tr>
+                                        <tr style="background-color:rgb(192, 213, 210);">
+                                            <td colspan="1" style="text-align: right;border-right: solid 2px;"><strong>Duration</strong></td>
+                                            <td style="text-align: left;" colspan="2">
+                                                {{(movie.duration - movie.duration%60)/60}}h {{movie.duration%60}}m
+                                            </td>
+                                        </tr>
+                                        <tr style="background-color: rgb(192, 213, 210);">
+                                            <td colspan="1" style="text-align: right;border-right: solid 2px;"><strong>Producers</strong></td>
+                                            <td style="text-align: left;" colspan="2">
+                                                <ng-container *ngFor="let producer of movie.producers;last as isLast;">
+                                                    {{producer}}<ng-container *ngIf="!isLast">,</ng-container>
+                                                </ng-container>
+                                            </td>
+                                        </tr>
+                                        <tr style="background-color: rgb(192, 213, 210);">
+                                            <td colspan="1" style="text-align: right;border-right: solid 2px;"><strong>Cinematographers</strong></td>
+                                            <td style="text-align: left;" colspan="2" >
+                                                <ng-container
+                                                    *ngFor="let cinematographer of movie.cinematographers;last as isLast;">
+                                                    {{cinematographer}}<ng-container *ngIf="!isLast">,</ng-container>
+                                                </ng-container>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+            <td class="example-16-width">
+
             </td>
         </tr>
-    </tbody>    
+    </tbody>
 </table>
