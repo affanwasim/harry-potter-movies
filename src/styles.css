@@ -197,6 +197,15 @@ mat-toolbar {
     /* border-radius: 10px; */
 }
 
+.example-34-width {
+  width: 75%;
+  vertical-align: middle;
+  min-height: fit-content;
+  background-color:rgba(176, 204, 189, 0.962);
+  /* border-radius: 10px; */
+  padding: 25px;
+}
+
 .example-23-width {
     width: 67%;
     vertical-align: middle;
@@ -234,6 +243,22 @@ mat-toolbar {
 
 .example-16-width {
   width: 17%;
+  vertical-align: middle;
+  min-height: fit-content;
+  /* border-radius: 10px; */
+  padding: 30px 30px 20px 20px;
+}
+
+.example-110-width {
+  width: 10%;
+  vertical-align: middle;
+  min-height: fit-content;
+  /* border-radius: 10px; */
+  padding: 30px 30px 20px 20px;
+}
+
+.example-18-width {
+  width: 7.5%;
   vertical-align: middle;
   min-height: fit-content;
   /* border-radius: 10px; */
@@ -335,3 +360,6 @@ mat-divider {
     min-height: fit-content;
 }
 
+thead {
+  padding:0px;
+}
