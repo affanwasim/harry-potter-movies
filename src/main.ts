@@ -221,10 +221,10 @@ const handlers = [
 ];
 
 async function prepareApp() {
-  if (isDevMode()) {
+  //if (isDevMode()) {
     const worker = setupWorker(...handlers);
     return worker.start()
-  }
+  //}
 
   return Promise.resolve()
 }
