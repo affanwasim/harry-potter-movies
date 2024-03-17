@@ -31,19 +31,19 @@
                                 <table class="example-full-width">
                                     <thead>
                                         <td colspan="3">
-                                            <h1>{{movie.title}}</h1>
+                                            <h1><strong>{{movie.title}}</strong></h1>
                                         </td>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td colspan="1">
+                                            <td colspan="1" style="vertical-align: top;">
                                                 <img style="vertical-align: top;" src={{movie.poster}}
                                                     alt="Movie Poster" aria-label="Movie Poster" width="115%"
                                                     height="115%">
                                             </td>
-                                            <td style="text-align: left;vertical-align: top;line-height: 25px;padding-left: 30px;" colspan="3">
-                                                <br>
-                                                <strong>Summary:</strong> {{movie.summary}}
+                                            <td style="text-align: left;vertical-align: top;padding-left: 30px;width:max-content;" colspan="1">
+                                                <p></p>
+                                                <p style="vertical-align:top;text-align: left;line-height: 25px;"><strong>Summary:</strong> {{movie.summary}}</p>
                                             </td>
                                         </tr>
                                         <tr>
@@ -54,7 +54,7 @@
 
                                         <tr style="background-color: rgb(192, 213, 210);">
                                             <td colspan="1" style="text-align: right;border-right: solid 2px;"><strong>Box office</strong></td>
-                                            <td style="text-align: left;" colspan="2">
+                                            <td style="text-align: left;" colspan="1">
                                                 ${{movie.box_office}} <ng-container
                                                     *ngIf="(movie.box_office)<10 else million">billion</ng-container><ng-template
                                                     #million>million</ng-template>
@@ -62,19 +62,19 @@
                                         </tr>
                                         <tr style="background-color: rgb(192, 213, 210);">
                                             <td colspan="1" style="text-align: right;border-right: solid 2px;"><strong>Budget</strong></td>
-                                            <td style="text-align: left;" colspan="2">
+                                            <td style="text-align: left;" colspan="1">
                                                 ${{movie.budget}} million
                                             </td>
                                         </tr>
                                         <tr style="background-color:rgb(192, 213, 210);">
                                             <td colspan="1" style="text-align: right;border-right: solid 2px;"><strong>Duration</strong></td>
-                                            <td style="text-align: left;" colspan="2">
+                                            <td style="text-align: left;" colspan="1">
                                                 {{(movie.duration - movie.duration%60)/60}}h {{movie.duration%60}}m
                                             </td>
                                         </tr>
                                         <tr style="background-color: rgb(192, 213, 210);">
                                             <td colspan="1" style="text-align: right;border-right: solid 2px;"><strong>Producers</strong></td>
-                                            <td style="text-align: left;" colspan="2">
+                                            <td style="text-align: left;" colspan="1">
                                                 <ng-container *ngFor="let producer of movie.producers;last as isLast;">
                                                     {{producer}}<ng-container *ngIf="!isLast">,</ng-container>
                                                 </ng-container>
@@ -82,7 +82,7 @@
                                         </tr>
                                         <tr style="background-color: rgb(192, 213, 210);">
                                             <td colspan="1" style="text-align: right;border-right: solid 2px;"><strong>Cinematographers</strong></td>
-                                            <td style="text-align: left;" colspan="2" >
+                                            <td style="text-align: left;" colspan="1" >
                                                 <ng-container
                                                     *ngFor="let cinematographer of movie.cinematographers;last as isLast;">
                                                     {{cinematographer}}<ng-container *ngIf="!isLast">,</ng-container>
