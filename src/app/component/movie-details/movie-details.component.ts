@@ -23,14 +23,14 @@ import { MatIcon, MatIconModule } from '@angular/material/icon';
 export class MovieDetailsComponent {
   movie$:Observable<Movie|null>;
   id:string;
-  constructor(private router:Router,private service:MoviesService) {
-    const url:string= router.url;
-    this.id = url.substring(url.lastIndexOf('/')+1,url.length);
+  constructor(private router:Router,private service:MoviesService,private route:ActivatedRoute) {
+    this.id = this.route.snapshot.params['id'];
     console.log('id is : '+ this.id)
     this.movie$ = service.getMovie(this.id);
   }
   backToMovies(): void {
-    const homePageURL:string = this.router.url.substring(0,this.router.url.lastIndexOf('/'));
+    const homePageURL:string = this.route.snapshot.url[0].path.toString();
+    console.log(homePageURL);
     this.router.navigate([homePageURL]);
   }
 }

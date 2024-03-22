@@ -5,7 +5,7 @@ import { MovieDetailsComponent } from './component/movie-details/movie-details.c
 export const routes: Routes = [
     {path: '', redirectTo:'movies', pathMatch:'full'},
     {path: 'movies', component : MoviesComponent},
-    {path: 'movies/:', component : MovieDetailsComponent},
+    {path: 'movies/:id', component : MovieDetailsComponent},
 ];
 
 
